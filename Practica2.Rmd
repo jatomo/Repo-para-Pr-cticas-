@@ -1,13 +1,42 @@
 ---
 title: "Practica #2"
-author: "Jahaira Mora"
+author: "Jahaira Mora"editor_options: 
+  chunk_output_type: console
+---
 
-```{r}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 library(datos)
 library(dplyr)
+library(datasets)
+
+```
+
+
+```{r}
+autos <- datasets::mtcars
 ```
 
 ```{r}
+Autos_filtrados <- mtcars |> 
+  filter(hp > 100) 
+```
 
+```{r}
+autos_ordenados <- Autos_filtrados |> 
+  arrange(desc(hp))
+```
+
+```{r}
+autos_seleccionados <- autos_ordenados |> 
+  select(mpg, hp, wt)
+
+```
+
+```{r}
+promedios <- autos_seleccionados |> 
+  summarize(promedio_mpg = mean(mpg),
+            promedio_hp = mean(hp),
+            promedio_wt = mean(wt))
 ```
 
