@@ -1,0 +1,13 @@
+---
+title: "Practica #2"
+author: "Jahaira Mora"
+
+```{r}
+library(datos)
+library(dplyr)
+```
+
+```{r}
+
+```
+
